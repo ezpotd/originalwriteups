@@ -1,0 +1,63 @@
+html
+  head
+    title ezpotd&apos;s writeups
+    link(rel = "shortcut icon", href = "/static/favicon.ico")
+    style
+      include style.css
+  body
+    center#title 
+      a(href = "/")#big ezpotd&apos;s writeups
+    hr(class = "first")
+    div
+      center
+        h1 Upload
+        form(action = "/edit", method = "POST")
+          div(class = "horizontal")
+            div(class = "input")
+              h3 Year
+              input(name = "year")
+            div(class = "input")
+              h3 Contest
+              input(name = "contest")
+            div(class = "input")
+              h3 Problem
+              input(name = "problem")
+            div(class = "input")
+              h3 Subject
+              input(name = "subject")
+            div(class = "input")
+              h3 Password
+              input(name = "password")
+            div(class = "input")
+              h3 Solution
+              input(name = "solution")
+            div(class = "input")
+              input(type = "Submit", class = "submit")
+            center(class = "second")
+              hr(class = "first")#bound1
+        h1 Search For Writeups
+        form(action = "/search", method = "POST")
+          div(class = "horizontal")
+            div(class = "input")
+              h3 Year
+              input(name = "year")
+            div(class = "input")
+              h3 Contest
+              input(name = "contest")
+            div(class = "input")
+              h3 Problem
+              input(name = "problem")
+            div(class = "input")
+              h3 Subject
+              input(name = "subject")
+            div(class = "input")
+              input(type = "Submit", class = "submit")
+            center(class = "second")
+              hr(class = "first")#bound2
+            center
+              h1 Recents
+              each link in links ? links : []
+                a(href= "/sol/" + link.link)
+                  h3= link.title
+              a(href = "/recents") 
+                h3 More.......

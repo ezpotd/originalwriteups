@@ -1,0 +1,17 @@
+html
+  head
+    title ezpotd&apos;s writeups
+    link(rel = "shortcut icon", href = "/static/favicon.ico")
+    style
+      include style.css
+  body
+    center#title 
+      a(href = "/")#big ezpotd&apos;s writeups
+    hr.first
+    center
+      each link in links
+        a(href= "/sol/" + link.link)
+          h3= link.title
+      else
+        h3 There are no results.
+  

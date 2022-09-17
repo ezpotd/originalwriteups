@@ -1,0 +1,16 @@
+html
+  head
+    title ezpotd&apos;s writeups
+    link(rel = "shortcut icon", href = "/static/favicon.ico")
+    style
+      include style.css
+  body
+    center#title 
+      a(href = "/")#big ezpotd&apos;s writeups
+    hr(class = "first")
+    div(class = "horizontal")
+      center
+        h1#recents Recents
+          each link in links ? links : []
+            a(href= "/sol/" + link.link)
+              h3(class = "check")= link.title
